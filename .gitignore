@@ -26,3 +26,19 @@ build/
 
 # Temporary files
 *.tmp
+
+# Generated ML artifacts
+models/
+predictions/
+metrics/
+models_metadata/
+
+# Generated reports
+reports/
+
+# Keep these reports tracked
+!datasets/reports/
+
+# Python cache
+__pycache__/
+*.pyc
