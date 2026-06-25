@@ -1,0 +1,147 @@
+==================================================================
+  AIRSENSE AI – FEATURE ENGINEERING REPORT
+  Generated     : 2026-06-25 16:25:25
+  Script        : utils/02_feature_engineering.py
+==================================================================
+
+[1] DATASET DIMENSIONS
+------------------------------------------------------------------
+  Input  shape  :   29,531 rows × 22 columns
+  Output shape  :   29,531 rows × 47 columns
+  New columns   : 25
+
+[2] CITIES PROCESSED
+------------------------------------------------------------------
+  Total cities  : 26
+    •  Ahmedabad
+    •  Aizawl
+    •  Amaravati
+    •  Amritsar
+    •  Bengaluru
+    •  Bhopal
+    •  Brajrajnagar
+    •  Chandigarh
+    •  Chennai
+    •  Coimbatore
+    •  Delhi
+    •  Ernakulam
+    •  Gurugram
+    •  Guwahati
+    •  Hyderabad
+    •  Jaipur
+    •  Jorapokhar
+    •  Kochi
+    •  Kolkata
+    •  Lucknow
+    •  Mumbai
+    •  Patna
+    •  Shillong
+    •  Talcher
+    •  Thiruvananthapuram
+    •  Visakhapatnam
+
+[3] FEATURE GROUPS CREATED
+------------------------------------------------------------------
+  Group A — AQI Lag Features (4 columns)
+    ✓  AQI_lag_1                       ← 4,705 NaN (expected: lag/roll boundary)
+    ✓  AQI_lag_2                       ← 4,730 NaN (expected: lag/roll boundary)
+    ✓  AQI_lag_3                       ← 4,755 NaN (expected: lag/roll boundary)
+    ✓  AQI_lag_7                       ← 4,855 NaN (expected: lag/roll boundary)
+
+  Group B — PM2.5 Lag Features (2 columns)
+    ✓  PM25_lag_1                      ← 4,621 NaN (expected: lag/roll boundary)
+    ✓  PM25_lag_3                      ← 4,669 NaN (expected: lag/roll boundary)
+
+  Group C — PM10 Lag Feature (1 columns)
+    ✓  PM10_lag_1                      ← 11,162 NaN (expected: lag/roll boundary)
+
+  Group D — CO Lag Feature (1 columns)
+    ✓  CO_lag_1                        ← 2,084 NaN (expected: lag/roll boundary)
+
+  Group E — Rolling Window Features (5 columns)
+    ✓  AQI_roll_mean_3                 ← 3,984 NaN (expected: lag/roll boundary)
+    ✓  AQI_roll_mean_7                 ← 3,559 NaN (expected: lag/roll boundary)
+    ✓  AQI_roll_std_7                  ← 3,770 NaN (expected: lag/roll boundary)
+    ✓  AQI_roll_max_7                  ← 3,559 NaN (expected: lag/roll boundary)
+    ✓  AQI_roll_min_7                  ← 3,559 NaN (expected: lag/roll boundary)
+
+  Group F — Trend / Delta Features (3 columns)
+    ✓  AQI_change                      ← 5,188 NaN (expected: lag/roll boundary)
+    ✓  PM25_change                     ← 4,887 NaN (expected: lag/roll boundary)
+    ✓  PM10_change                     ← 11,427 NaN (expected: lag/roll boundary)
+
+  Group G — Cyclical Encoding (4 columns)
+    ✓  Month_sin                     
+    ✓  Month_cos                     
+    ✓  DayOfWeek_sin                 
+    ✓  DayOfWeek_cos                 
+
+  Group H — Weather Placeholder Columns (4 columns)
+    ✓  temperature                     ← 29,531 NaN (expected: lag/roll boundary)
+    ✓  humidity                        ← 29,531 NaN (expected: lag/roll boundary)
+    ✓  wind_speed                      ← 29,531 NaN (expected: lag/roll boundary)
+    ✓  rainfall                        ← 29,531 NaN (expected: lag/roll boundary)
+
+  Group I — Weighted Pollution Index (1 columns)
+    ✓  pollution_index                 ← 12,479 NaN (expected: lag/roll boundary)
+
+[4] NULL VALUE SUMMARY FOR NEW COLUMNS
+------------------------------------------------------------------
+  Column                            NaN Count     NaN %
+------------------------------------------------------------------
+  AQI_lag_1                             4,705    15.93%
+  AQI_lag_2                             4,730    16.02%
+  AQI_lag_3                             4,755    16.10%
+  AQI_lag_7                             4,855    16.44%
+  PM25_lag_1                            4,621    15.65%
+  PM25_lag_3                            4,669    15.81%
+  PM10_lag_1                           11,162    37.80%
+  CO_lag_1                              2,084     7.06%
+  AQI_roll_mean_3                       3,984    13.49%
+  AQI_roll_mean_7                       3,559    12.05%
+  AQI_roll_std_7                        3,770    12.77%
+  AQI_roll_max_7                        3,559    12.05%
+  AQI_roll_min_7                        3,559    12.05%
+  AQI_change                            5,188    17.57%
+  PM25_change                           4,887    16.55%
+  PM10_change                          11,427    38.69%
+  temperature                          29,531   100.00%
+  humidity                             29,531   100.00%
+  wind_speed                           29,531   100.00%
+  rainfall                             29,531   100.00%
+  pollution_index                      12,479    42.26%
+
+  Note: NaN values in lag/rolling features are expected — they
+  occur at the start of each city's time series (boundary effect).
+  Imputation of these values is handled in a later pipeline stage.
+
+[5] POLLUTION INDEX WEIGHTS
+------------------------------------------------------------------
+  Pollutant        Weight   Rationale
+------------------------------------------------------------------
+  PM2.5            0.40     Primary AQI driver in Indian cities (CPCB)
+  PM10             0.30     Coarse particulate — road/construction dust
+  NO2              0.20     Secondary photochemical pollutant
+  CO               0.10     Combustion / vehicular emission indicator
+
+[6] LEAKAGE PREVENTION MEASURES
+------------------------------------------------------------------
+  ✓  All lag/rolling features computed via groupby('City').shift()
+  ✓  Rolling windows use .shift(1) before .rolling() — no same-day look
+  ✓  Trend features use groupby('City').diff(1) — backward only
+  ✓  No feature uses future AQI, PM2.5 or any other target value
+  ✓  Chronological City → Date sort preserved throughout
+
+[7] PROCESSING TIME
+------------------------------------------------------------------
+  Elapsed time  : 2.3718 seconds
+
+[8] OUTPUT FILES
+------------------------------------------------------------------
+  Engineered CSV : datasets\processed\feature_engineered_city_day.csv
+  This report    : datasets\reports\feature_engineering_report.txt
+
+==================================================================
+  Feature engineering complete.
+  Next stage: utils/03_model_training.py
+==================================================================
