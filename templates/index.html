@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AirSense AI – Urban Air Quality Intelligence</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ── NAVBAR ──────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">AirSense <span class="logo-accent">AI</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Modules</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#" class="nav-cta">Launch Dashboard →</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="aqi-badge">
+      <span class="aqi-dot"></span>
+      <span class="mono">LIVE AQI MONITORING ACTIVE</span>
+    </div>
+    <h1 class="hero-title">
+      From Monitoring<br/>
+      Pollution to<br/>
+      <span class="hero-highlight">Preventing It.</span>
+    </h1>
+    <p class="hero-sub">
+      AirSense AI delivers real-time urban air quality intelligence, predictive forecasting,
+      and smart city intervention — built for Indian cities, powered by machine learning.
+    </p>
+    <div class="hero-actions">
+      <a href="#features" class="btn-primary">Explore Platform</a>
+      <a href="#" class="btn-ghost">View Live Map →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-label">Intelligence Modules</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Pollutants Tracked</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-num">24h</span>
+        <span class="stat-label">Forecast Horizon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TICKER ───────────────────────────────────────────── -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>PM2.5</span><span>●</span>
+      <span>PM10</span><span>●</span>
+      <span>NO₂</span><span>●</span>
+      <span>SO₂</span><span>●</span>
+      <span>CO</span><span>●</span>
+      <span>O₃</span><span>●</span>
+      <span>AQI FORECAST</span><span>●</span>
+      <span>HEATMAP</span><span>●</span>
+      <span>SOURCE ATTRIBUTION</span><span>●</span>
+      <span>HEALTH ADVISORY</span><span>●</span>
+      <span>SMART INTERVENTION</span><span>●</span>
+      <!-- duplicate for seamless loop -->
+      <span>PM2.5</span><span>●</span>
+      <span>PM10</span><span>●</span>
+      <span>NO₂</span><span>●</span>
+      <span>SO₂</span><span>●</span>
+      <span>CO</span><span>●</span>
+      <span>O₃</span><span>●</span>
+      <span>AQI FORECAST</span><span>●</span>
+      <span>HEATMAP</span><span>●</span>
+      <span>SOURCE ATTRIBUTION</span><span>●</span>
+      <span>HEALTH ADVISORY</span><span>●</span>
+      <span>SMART INTERVENTION</span><span>●</span>
+    </div>
+  </div>
+
+  <!-- ── FEATURES ─────────────────────────────────────────── -->
+  <section class="features" id="features">
+    <div class="section-label mono">PLATFORM MODULES</div>
+    <h2 class="section-title">Six Layers of Air Intelligence</h2>
+    <p class="section-sub">
+      Each module is an independent intelligence layer — together they form a complete
+      urban air quality command center.
+    </p>
+
+    <div class="cards-grid">
+
+      <div class="card card--accent">
+        <div class="card-icon">⬡</div>
+        <div class="card-tag mono">MODULE 01</div>
+        <h3 class="card-title">AQI Monitoring</h3>
+        <p class="card-desc">
+          Real-time ingestion from OpenAQ and OpenWeatherMap APIs. Track PM2.5, PM10, NO₂,
+          SO₂, CO and O₃ across multiple city zones with live AQI index computation.
+        </p>
+        <a href="#" class="card-link">Open Monitor →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">◎</div>
+        <div class="card-tag mono">MODULE 02</div>
+        <h3 class="card-title">AQI Forecasting</h3>
+        <p class="card-desc">
+          XGBoost-powered 24-hour AQI predictions trained on historical pollution and
+          meteorological data. Know tomorrow's air quality — today.
+        </p>
+        <a href="#" class="card-link">View Forecast →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">◈</div>
+        <div class="card-tag mono">MODULE 03</div>
+        <h3 class="card-title">Source Attribution</h3>
+        <p class="card-desc">
+          Identify dominant pollution contributors — vehicular emissions, industrial output,
+          construction dust — using ML-based pollutant fingerprinting.
+        </p>
+        <a href="#" class="card-link">Analyze Sources →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⬡</div>
+        <div class="card-tag mono">MODULE 04</div>
+        <h3 class="card-title">Geospatial Heatmap</h3>
+        <p class="card-desc">
+          Folium-rendered interactive heatmaps showing pollution intensity across city
+          grids. Zoom into any ward to assess hyperlocal air quality.
+        </p>
+        <a href="#" class="card-link">Open Heatmap →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">♡</div>
+        <div class="card-tag mono">MODULE 05</div>
+        <h3 class="card-title">Health Advisory</h3>
+        <p class="card-desc">
+          Rule-based advisory engine that issues real-time health alerts for sensitive
+          groups — children, elderly, asthma patients — with actionable guidance.
+        </p>
+        <a href="#" class="card-link">Check Advisory →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-tag mono">MODULE 06</div>
+        <h3 class="card-title">Smart Intervention</h3>
+        <p class="card-desc">
+          Automated intervention triggers — odd-even vehicle rules, industrial shutdown
+          alerts, water sprinkling schedules — when AQI crosses critical thresholds.
+        </p>
+        <a href="#" class="card-link">Configure →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ABOUT STRIP ──────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-label mono">ABOUT THE PLATFORM</div>
+        <h2 class="section-title">Built for Indian Cities.<br/>Designed for Action.</h2>
+        <p>
+          AirSense AI is an open-source urban intelligence platform developed to tackle
+          India's air quality crisis with data-driven, proactive interventions — not just
+          reactive monitoring. Developed for ET AI Hackathon 2.0 and BSERC Def-Space 2026.
+        </p>
+        <div class="about-chips">
+          <span class="chip mono">Flask</span>
+          <span class="chip mono">XGBoost</span>
+          <span class="chip mono">Folium</span>
+          <span class="chip mono">SQLite</span>
+          <span class="chip mono">OpenAQ</span>
+          <span class="chip mono">Scikit-Learn</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="aqi-meter">
+          <div class="meter-label mono">COMPOSITE AQI INDEX</div>
+          <div class="meter-value">
+            <span class="meter-num">148</span>
+            <span class="meter-unit">AQI</span>
+          </div>
+          <div class="meter-bar">
+            <div class="meter-fill" style="width: 49%"></div>
+          </div>
+          <div class="meter-scale">
+            <span class="mono" style="color:#39d353">Good</span>
+            <span class="mono" style="color:#f5a623">Moderate</span>
+            <span class="mono" style="color:#e05252">Hazardous</span>
+          </div>
+          <div class="meter-status mono">⚠ Unhealthy for Sensitive Groups</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">AirSense <span class="logo-accent">AI</span></span>
+      </div>
+      <p class="footer-tagline mono">From Monitoring Pollution to Preventing Pollution</p>
+      <div class="footer-links">
+        <a href="#">Dashboard</a>
+        <a href="#">Heatmap</a>
+        <a href="#">Forecast</a>
+        <a href="#">Advisory</a>
+      </div>
+      <p class="footer-copy mono">© 2026 AirSense AI · Built for ET AI Hackathon 2.0 & BSERC Def-Space 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const ham = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    ham.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      ham.classList.toggle('active');
+    });
+
+    // Navbar shrink on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Scroll-reveal for cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.card, .about-inner, .hero-stats').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

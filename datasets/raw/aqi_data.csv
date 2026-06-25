@@ -1,0 +1,6 @@
+city,station,country,latitude,longitude,last_updated,pm25,pm10,no2,so2,co,o3,calculated_aqi,aqi_category,fetched_at
+Delhi,No Data,India,,,N/A,,,,,,,,Unknown,2026-06-24 17:34:16
+Noida,No Data,India,,,N/A,,,,,,,,Unknown,2026-06-24 17:34:19
+Mumbai,No Data,India,,,N/A,,,,,,,,Unknown,2026-06-24 17:34:21
+Bengaluru,No Data,India,,,N/A,,,,,,,,Unknown,2026-06-24 17:34:23
+Chennai,No Data,India,,,N/A,,,,,,,,Unknown,2026-06-24 17:34:25

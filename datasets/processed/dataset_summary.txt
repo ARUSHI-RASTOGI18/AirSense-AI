@@ -1,0 +1,138 @@
+============================================================
+  AirSense AI – Dataset Exploration Report
+  Generated : 2026-06-24 18:02:23
+  Source    : datasets\raw\city_day.csv
+============================================================
+
+[1] BASIC SHAPE
+------------------------------------------------------------
+  Total Rows    : 29,531
+  Total Columns : 16
+
+[2] COLUMN NAMES
+------------------------------------------------------------
+   1. City
+   2. Date
+   3. PM2.5
+   4. PM10
+   5. NO
+   6. NO2
+   7. NOx
+   8. NH3
+   9. CO
+  10. SO2
+  11. O3
+  12. Benzene
+  13. Toluene
+  14. Xylene
+  15. AQI
+  16. AQI_Bucket
+
+[3] DATA TYPES
+------------------------------------------------------------
+  City                 : str
+  Date                 : str
+  PM2.5                : float64
+  PM10                 : float64
+  NO                   : float64
+  NO2                  : float64
+  NOx                  : float64
+  NH3                  : float64
+  CO                   : float64
+  SO2                  : float64
+  O3                   : float64
+  Benzene              : float64
+  Toluene              : float64
+  Xylene               : float64
+  AQI                  : float64
+  AQI_Bucket           : str
+
+[4] MISSING VALUES PER COLUMN
+------------------------------------------------------------
+  City                 :      0 missing  (  0.00%)
+  Date                 :      0 missing  (  0.00%)
+  PM2.5                :  4,598 missing  ( 15.57%)
+  PM10                 : 11,140 missing  ( 37.72%)
+  NO                   :  3,582 missing  ( 12.13%)
+  NO2                  :  3,585 missing  ( 12.14%)
+  NOx                  :  4,185 missing  ( 14.17%)
+  NH3                  : 10,328 missing  ( 34.97%)
+  CO                   :  2,059 missing  (  6.97%)
+  SO2                  :  3,854 missing  ( 13.05%)
+  O3                   :  4,022 missing  ( 13.62%)
+  Benzene              :  5,623 missing  ( 19.04%)
+  Toluene              :  8,041 missing  ( 27.23%)
+  Xylene               : 18,109 missing  ( 61.32%)
+  AQI                  :  4,681 missing  ( 15.85%)
+  AQI_Bucket           :  4,681 missing  ( 15.85%)
+
+  Total missing cells : 88,488
+
+[5] DATE RANGE
+------------------------------------------------------------
+  Earliest Date : 2015-01-01
+  Latest Date   : 2020-07-01
+  Total Span    : 2008 days  (~5 years 183 days)
+
+[6] CITY COVERAGE
+------------------------------------------------------------
+  Total Unique Cities : 26
+
+  First 20 Cities:
+     1. Ahmedabad
+     2. Aizawl
+     3. Amaravati
+     4. Amritsar
+     5. Bengaluru
+     6. Bhopal
+     7. Brajrajnagar
+     8. Chandigarh
+     9. Chennai
+    10. Coimbatore
+    11. Delhi
+    12. Ernakulam
+    13. Gurugram
+    14. Guwahati
+    15. Hyderabad
+    16. Jaipur
+    17. Jorapokhar
+    18. Kochi
+    19. Kolkata
+    20. Lucknow
+
+[7] RECORDS PER TARGET CITY
+------------------------------------------------------------
+  Delhi           : 2,009 records   [2015-01-01  →  2020-07-01]
+  Mumbai          : 2,009 records   [2015-01-01  →  2020-07-01]
+  Bengaluru       : 2,009 records   [2015-01-01  →  2020-07-01]
+  Chennai         : 2,009 records   [2015-01-01  →  2020-07-01]
+
+[8] AQI STATISTICS
+------------------------------------------------------------
+  Total AQI readings : 24,850
+  Mean AQI           : 166.46
+  Median AQI         : 118.00
+  Std Deviation      : 140.70
+  Min AQI            : 13.00
+  Max AQI            : 2049.00
+  25th Percentile    : 81.00
+  75th Percentile    : 208.00
+
+  AQI Category Breakdown:
+    Moderate             :  8,829  (29.9%)
+    Satisfactory         :  8,224  (27.8%)
+    nan                  :  4,681  (15.9%)
+    Poor                 :  2,781  (9.4%)
+    Very Poor            :  2,337  (7.9%)
+    Good                 :  1,341  (4.5%)
+    Severe               :  1,338  (4.5%)
+
+  Mean AQI per Target City:
+    Delhi           : Mean=259.5  Min=29  Max=716
+    Mumbai          : Mean=105.4  Min=40  Max=307
+    Bengaluru       : Mean=94.3  Min=20  Max=352
+    Chennai         : Mean=114.5  Min=30  Max=449
+
+============================================================
+  AirSense AI – Exploration Complete
+============================================================

@@ -1,0 +1,359 @@
+======================================================================
+  AIRSENSE AI – DATASET QUALITY ANALYSIS REPORT
+  Generated : 2026-06-24 18:23:43
+  Dataset   : datasets\raw\city_day.csv
+  NOTE      : This script is READ-ONLY. No data is modified.
+======================================================================
+
+  Dataset loaded successfully — 29,531 rows × 16 columns
+
+======================================================================
+  SECTION 1 │ DATASET OVERVIEW
+======================================================================
+  Rows               : 29,531
+  Columns            : 16
+
+  Column List:
+······································································
+     1. City
+     2. Date
+     3. PM2.5
+     4. PM10
+     5. NO
+     6. NO2
+     7. NOx
+     8. NH3
+     9. CO
+    10. SO2
+    11. O3
+    12. Benzene
+    13. Toluene
+    14. Xylene
+    15. AQI
+    16. AQI_Bucket
+
+  Data Types:
+······································································
+    City                 : str
+    Date                 : str
+    PM2.5                : float64
+    PM10                 : float64
+    NO                   : float64
+    NO2                  : float64
+    NOx                  : float64
+    NH3                  : float64
+    CO                   : float64
+    SO2                  : float64
+    O3                   : float64
+    Benzene              : float64
+    Toluene              : float64
+    Xylene               : float64
+    AQI                  : float64
+    AQI_Bucket           : str
+
+  Date Range:
+······································································
+    Earliest Date      : 2015-01-01
+    Latest Date        : 2020-07-01
+    Total Span         : 2008 days  (~5 yr 183 days)
+    Invalid Date Rows  : 0
+
+  Memory Usage       : 6.69 MB
+
+======================================================================
+  SECTION 2 │ MISSING VALUE ANALYSIS
+======================================================================
+  Total Cells        : 472,496
+  Total Missing      : 88,488  (18.73% of all cells)
+
+  Column                   Missing Count    Missing %
+······································································
+  Xylene                          18,109       61.32%  ◄ HIGH
+  PM10                            11,140       37.72%  ◄ HIGH
+  NH3                             10,328       34.97%  ◄ HIGH
+  Toluene                          8,041       27.23%
+  Benzene                          5,623       19.04%
+  AQI                              4,681       15.85%
+  AQI_Bucket                       4,681       15.85%
+  PM2.5                            4,598       15.57%
+  NOx                              4,185       14.17%
+  O3                               4,022       13.62%
+  SO2                              3,854       13.05%
+  NO2                              3,585       12.14%
+  NO                               3,582       12.13%
+  CO                               2,059        6.97%
+  Date                                 0        0.00%
+  City                                 0        0.00%
+
+  Rows with ≥1 missing value : 23,295  (78.88%)
+  Rows with ALL pollutants missing : 1,567
+
+======================================================================
+  SECTION 3 │ DUPLICATE ANALYSIS
+======================================================================
+  Total Duplicate Rows  : 0
+  Duplicate Percentage  : 0.000%
+
+  ✓ No exact duplicate rows found.
+
+  City+Date Logical Duplicates : 0  (same city recorded twice on same date)
+
+======================================================================
+  SECTION 4 │ TARGET CITY ANALYSIS
+======================================================================
+  ┌─ DELHI ───────────────────────────────────────────────
+  │  Records          : 2,009
+  │  Date Range       : 2015-01-01  →  2020-07-01
+  │  Span             : 2008 days
+  │  AQI Records      : 1,999  (10 missing)
+  │  AQI Mean         : 259.49
+  │  AQI Median       : 257.00
+  │  AQI Min          : 29.00
+  │  AQI Max          : 716.00
+  │  AQI Std Dev      : 119.54
+  │  Missing per key column:
+  │    PM2.5      :    2 missing  (0.1%)
+  │    PM10       :   77 missing  (3.8%)
+  │    NO2        :    2 missing  (0.1%)
+  │    SO2        :  110 missing  (5.5%)
+  │    CO         :    0 missing  (0.0%)
+  │    O3         :   84 missing  (4.2%)
+  │    AQI        :   10 missing  (0.5%)
+  └────────────────────────────────────────────────────────
+
+  ┌─ MUMBAI ──────────────────────────────────────────────
+  │  Records          : 2,009
+  │  Date Range       : 2015-01-01  →  2020-07-01
+  │  Span             : 2008 days
+  │  AQI Records      : 775  (1234 missing)
+  │  AQI Mean         : 105.35
+  │  AQI Median       : 91.00
+  │  AQI Min          : 40.00
+  │  AQI Max          : 307.00
+  │  AQI Std Dev      : 47.41
+  │  Missing per key column:
+  │    PM2.5      : 1225 missing  (61.0%)
+  │    PM10       : 1246 missing  (62.0%)
+  │    NO2        : 1253 missing  (62.4%)
+  │    SO2        : 1220 missing  (60.7%)
+  │    CO         :   25 missing  (1.2%)
+  │    O3         : 1212 missing  (60.3%)
+  │    AQI        : 1234 missing  (61.4%)
+  └────────────────────────────────────────────────────────
+
+  ┌─ BENGALURU ───────────────────────────────────────────
+  │  Records          : 2,009
+  │  Date Range       : 2015-01-01  →  2020-07-01
+  │  Span             : 2008 days
+  │  AQI Records      : 1,910  (99 missing)
+  │  AQI Mean         : 94.32
+  │  AQI Median       : 86.00
+  │  AQI Min          : 20.00
+  │  AQI Max          : 352.00
+  │  AQI Std Dev      : 39.91
+  │  Missing per key column:
+  │    PM2.5      :  146 missing  (7.3%)
+  │    PM10       :  360 missing  (17.9%)
+  │    NO2        :    6 missing  (0.3%)
+  │    SO2        :    6 missing  (0.3%)
+  │    CO         :   11 missing  (0.5%)
+  │    O3         :  144 missing  (7.2%)
+  │    AQI        :   99 missing  (4.9%)
+  └────────────────────────────────────────────────────────
+
+  ┌─ CHENNAI ─────────────────────────────────────────────
+  │  Records          : 2,009
+  │  Date Range       : 2015-01-01  →  2020-07-01
+  │  Span             : 2008 days
+  │  AQI Records      : 1,884  (125 missing)
+  │  AQI Mean         : 114.50
+  │  AQI Median       : 100.00
+  │  AQI Min          : 30.00
+  │  AQI Max          : 449.00
+  │  AQI Std Dev      : 51.97
+  │  Missing per key column:
+  │    PM2.5      :  117 missing  (5.8%)
+  │    PM10       : 1707 missing  (85.0%)
+  │    NO2        :   36 missing  (1.8%)
+  │    SO2        :   36 missing  (1.8%)
+  │    CO         :   25 missing  (1.2%)
+  │    O3         :   49 missing  (2.4%)
+  │    AQI        :  125 missing  (6.2%)
+  └────────────────────────────────────────────────────────
+
+======================================================================
+  SECTION 5 │ AQI DISTRIBUTION ANALYSIS
+======================================================================
+  Valid AQI Readings : 24,850  (4681 missing)
+
+  Central Tendency:
+······································································
+    Mean               : 166.46
+    Median             : 118.00
+    Std Deviation      : 140.70
+    Skewness           : 3.3968  (right-skewed → tail of high AQI values)
+    Kurtosis           : 21.4237
+
+  Percentiles:
+······································································
+      5th Percentile  : 50.00
+     10th Percentile  : 60.00
+     25th Percentile  : 81.00
+     50th Percentile  : 118.00
+     75th Percentile  : 208.00
+     90th Percentile  : 341.00
+     95th Percentile  : 407.00
+     99th Percentile  : 661.51
+
+  AQI Bucket (Category) Distribution:
+······································································
+    Good               :  1,341  (  4.5%)  ██
+    Satisfactory       :  8,224  ( 27.8%)  █████████████
+    Moderate           :  8,829  ( 29.9%)  ██████████████
+    Poor               :  2,781  (  9.4%)  ████
+    Very Poor          :  2,337  (  7.9%)  ███
+    Severe             :  1,338  (  4.5%)  ██
+    nan                :  4,681  ( 15.9%)
+
+======================================================================
+  SECTION 6 │ OUTLIER ANALYSIS  (IQR Method – identify only)
+======================================================================
+  Method : IQR  |  Lower = Q1 − 1.5×IQR  |  Upper = Q3 + 1.5×IQR
+  NOTE   : Outliers are identified only. No data is removed.
+
+  Column             Q1       Q3      IQR      Lower      Upper   Outliers        %
+······································································
+  PM2.5           28.82    80.59    51.77     -48.84     158.25      1,982    7.95%
+  PM10            56.25   149.75    93.49     -83.98     289.98      1,057    5.75%
+  NO2             11.75    37.62    25.87     -27.05      76.42      1,188    4.58%
+  SO2              5.67    15.22     9.55      -8.66      29.55      2,578   10.04%
+  CO               0.51     1.45     0.94      -0.90       2.86      2,475    9.01%
+  O3              18.86    45.57    26.71     -21.20      85.63        713    2.80%
+  AQI             81.00   208.00   127.00    -109.50     398.50      1,358    5.46%
+
+  Interpretation:
+    High outlier % in PM2.5/PM10 is expected (seasonal pollution spikes).
+    Outliers in CO/SO2 may indicate industrial incidents or sensor errors.
+    AQI outliers >400 likely correspond to 'Severe' category days in Delhi.
+
+======================================================================
+  SECTION 7 │ CORRELATION ANALYSIS  (Pearson – AQI vs Pollutants)
+======================================================================
+  Pollutant       Pearson r   Strength              Bar
+······································································
+  PM10               0.8033   Strong ↑ positive            ████████████████
+  CO                 0.6833   Moderate ↑ positive          █████████████
+  PM2.5              0.6592   Moderate ↑ positive          █████████████
+  NO2                0.5371   Moderate ↑ positive          ██████████
+  SO2                0.4906   Moderate ↑ positive          █████████
+  NOx                0.4865   Moderate ↑ positive          █████████
+  NO                 0.4522   Moderate ↑ positive          █████████
+  NH3                0.2520   Weak ↑ positive              █████
+  O3                 0.1990   Negligible ↑ positive        ███
+
+======================================================================
+  SECTION 8 │ FEATURE IMPORTANCE RECOMMENDATIONS
+======================================================================
+  ✅  DEFINITELY KEEP (Pearson |r| ≥ 0.40 with AQI):
+······································································
+    PM10          r = 0.8033  → Strong/Moderate predictor of AQI
+    CO            r = 0.6833  → Strong/Moderate predictor of AQI
+    PM2.5         r = 0.6592  → Strong/Moderate predictor of AQI
+    NO2           r = 0.5371  → Strong/Moderate predictor of AQI
+    SO2           r = 0.4906  → Strong/Moderate predictor of AQI
+    NOx           r = 0.4865  → Strong/Moderate predictor of AQI
+    NO            r = 0.4522  → Strong/Moderate predictor of AQI
+
+  ⚠️   USE WITH CAUTION (Pearson |r| < 0.40 with AQI):
+······································································
+    NH3           r = 0.2520  → Weak/Negligible direct correlation
+    O3            r = 0.1990  → Weak/Negligible direct correlation
+
+  Additional Notes:
+    • Low Pearson r does not mean a feature is useless for XGBoost
+      (tree models capture non-linear relationships).
+    • Benzene, Toluene, Xylene have high missingness — evaluate carefully.
+    • Date-derived features (month, day-of-week, season) should be engineered.
+    • Lag features (AQI t-1, t-3, t-7) are critical for time-series forecasting.
+
+======================================================================
+  SECTION 9 │ RECOMMENDED CLEANING STRATEGY
+======================================================================
+  ⚠️  These are RECOMMENDATIONS ONLY. No data has been modified.
+
+  [A] COLUMNS TO RETAIN
+······································································
+    ✅  City            Core grouping key — required for all city-level analysis
+    ✅  Date            Time axis — critical for time-series forecasting
+    ✅  PM2.5           Primary AQI driver — must retain
+    ✅  PM10            Strong AQI predictor — retain
+    ✅  NO              Part of NOx family — retain if NOx is kept
+    ✅  NO2             Moderate-strong AQI correlation — retain
+    ✅  NOx             Composite nitrogen oxide metric — retain
+    ✅  NH3             Weak correlation but useful for source attribution — retain
+    ✅  CO              Important for combustion source attribution — retain
+    ✅  SO2             Industrial source indicator — retain
+    ✅  O3              Secondary pollutant, photochemical signal — retain
+    ✅  AQI             Primary target variable for forecasting — must retain
+    ✅  AQI_Bucket      Classification target — retain
+
+  [B] COLUMNS TO CONSIDER DROPPING
+······································································
+    ⚠️   Benzene         Very high missingness (>50% in most cities); weak AQI correlation; may drop unless source attribution needed
+    ⚠️   Toluene         Very high missingness (>60%); negligible AQI correlation; recommend dropping
+    ⚠️   Xylene          Extremely high missingness (>80%); near-negligible AQI correlation; recommend dropping
+
+  [C] MISSING VALUE IMPUTATION STRATEGY
+······································································
+    Pollutants with <20% missing (PM2.5, PM10, NO, NO2, NOx, CO, SO2, O3):
+      → Use forward-fill (ffill) per city group first (captures
+        short sensor outages), then backward-fill for edge gaps.
+      → Fall back to city-level rolling 7-day median for remaining gaps.
+
+    NH3 (moderate missingness ~30–50%):
+      → Use city-level monthly median imputation.
+      → If still missing, use overall city mean.
+
+    AQI (missing where all sub-pollutants are also missing):
+      → Rows where AQI AND all pollutants are missing:
+        REMOVE these rows — no usable signal.
+      → Rows where pollutants exist but AQI is missing:
+        RECALCULATE AQI using CPCB sub-index formula.
+
+    Date (any NaT/invalid):
+      → Remove rows with unparseable dates — time axis integrity is critical.
+
+  [D] ROWS TO REMOVE
+······································································
+    1. Exact duplicate rows (City + Date identical) — keep first.
+    2. Rows where Date is null/invalid (NaT after parsing).
+    3. Rows where AQI AND all pollutants are simultaneously null
+       (no recoverable signal).
+    4. Rows with AQI > 500 or AQI < 0 (outside valid CPCB range)
+       — likely sensor or data entry errors.
+
+  [E] ROWS TO PRESERVE
+······································································
+    1. Rows with valid AQI even if some pollutant sub-columns are missing.
+    2. Extreme AQI values (300–500) that fall within the valid CPCB range
+       — these are real Severe pollution events (especially Delhi winters).
+    3. COVID-19 lockdown period rows (Mar–Jun 2020) — preserve as a special
+       temporal segment; may need a lockdown flag feature.
+
+  [F] FEATURE ENGINEERING SUGGESTIONS (post-cleaning)
+······································································
+    • month         : integer month from Date (captures seasonality)
+    • day_of_week   : 0–6 (weekday vs weekend traffic patterns)
+    • season        : Winter/Summer/Monsoon/Post-Monsoon
+    • is_lockdown   : binary flag for Mar 25 – Jun 30, 2020
+    • AQI_lag_1     : AQI from previous day (strongest predictor)
+    • AQI_lag_3     : AQI from 3 days prior
+    • AQI_lag_7     : AQI from 7 days prior
+    • PM25_PM10_ratio: ratio of PM2.5 to PM10 (source fingerprint)
+    • rolling_mean_7 : 7-day rolling mean of AQI per city
+
+  [G] RECOMMENDED TRAIN/TEST SPLIT
+······································································
+    Train : 2015-01-01  →  2019-12-31  (5 full years)
+    Test  : 2020-01-01  →  2020-07-01  (held-out future period)
+    Split type: Chronological (never random-split time-series data)

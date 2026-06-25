@@ -1,0 +1,42 @@
+==============================================================
+  AIRSENSE AI – PREPROCESSING REPORT
+  Generated : 2026-06-25 14:58:40
+  Script    : utils/01_preprocess.py
+==============================================================
+
+[1] DATASET DIMENSIONS
+--------------------------------------------------------------
+  Initial row count       :     29,531
+  Final row count         :     29,531
+  Net rows removed        :          0
+
+[2] DUPLICATE ROWS
+--------------------------------------------------------------
+  Exact duplicates removed:          0
+
+[3] COLUMNS REMOVED
+--------------------------------------------------------------
+  ✗  Xylene
+
+[4] COLUMNS CREATED
+--------------------------------------------------------------
+  ✓  Year
+  ✓  Month
+  ✓  Day
+  ✓  DayOfWeek
+  ✓  IsWeekend
+  ✓  Season
+  ✓  is_lockdown
+
+[5] PROCESSING TIME
+--------------------------------------------------------------
+  Elapsed time            : 0.2952 seconds
+
+[6] OUTPUT FILES
+--------------------------------------------------------------
+  Cleaned CSV  : datasets\processed\clean_city_day.csv
+  This report  : datasets\reports\preprocessing_report.txt
+
+==============================================================
+  Preprocessing complete — no imputation, scaling, or encoding applied.
+==============================================================
