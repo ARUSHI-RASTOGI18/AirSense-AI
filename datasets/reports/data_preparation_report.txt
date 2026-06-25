@@ -1,0 +1,128 @@
+====================================================================
+  AIRSENSE AI – DATA PREPARATION REPORT
+  Generated     : 2026-06-25 22:25:38
+  Script        : utils/03_data_preparation.py
+====================================================================
+
+[1] DATASET SIZES
+--------------------------------------------------------------------
+  Input shape (feature-engineered) :   29,531 rows × 47 columns
+  Total rows after split           :   29,531
+
+  Split              Rows   Date Range
+--------------------------------------------------------------------
+  Train            17,439   2015-01-01  →  2018-12-31
+  Validation        7,446   2019-01-01  →  2019-12-31
+  Test              4,646   2020-01-01  →  2020-07-01
+
+[2] SPLIT CONFIGURATION
+--------------------------------------------------------------------
+  Train end date   : 2018-12-31
+  Valid end date   : 2019-12-31
+  Test  end date   : 2020-07-31
+  Split method     : Chronological (no shuffle, no leakage)
+
+[3] IMPUTATION EXCLUSIONS
+--------------------------------------------------------------------
+  The following columns were excluded from KNNImputer because they
+  are intentionally 100% NaN (populated later by weather API fetch).
+  They are preserved in all output files with their NaN values intact.
+
+    ⊘  temperature  (weather placeholder — excluded from imputation)
+    ⊘  humidity  (weather placeholder — excluded from imputation)
+    ⊘  wind_speed  (weather placeholder — excluded from imputation)
+    ⊘  rainfall  (weather placeholder — excluded from imputation)
+
+[4] MISSING VALUE SUMMARY — BEFORE IMPUTATION
+--------------------------------------------------------------------
+  Numeric columns assessed (excl. placeholders) : 39
+
+  Feature                         Train NaN   Train %  Valid NaN   Test NaN
+--------------------------------------------------------------------
+  pollution_index                    10,173    58.34%      1,663        643
+  PM10_change                         9,662    55.41%      1,363        402
+  PM10_lag_1                          9,492    54.43%      1,307        363
+  PM10                                9,478    54.35%      1,299        363
+  NH3                                 8,298    47.58%      1,503        527
+  AQI_change                          4,415    25.32%        483        290
+  Toluene                             4,336    24.86%      2,383      1,322
+  PM25_change                         4,315    24.74%        365        207
+  AQI_lag_7                           4,203    24.10%        405        247
+  PM25_lag_3                          4,171    23.92%        328        170
+  PM25_lag_1                          4,137    23.72%        316        168
+  AQI_lag_3                           4,134    23.70%        387        234
+  PM2.5                               4,120    23.62%        310        168
+  AQI_lag_2                           4,116    23.60%        383        231
+  AQI_lag_1                           4,098    23.50%        380        227
+  AQI                                 4,081    23.40%        375        225
+  Benzene                             3,820    21.91%      1,007        796
+  AQI_roll_mean_3                     3,616    20.73%        232        136
+  AQI_roll_std_7                      3,483    19.97%        183        104
+  O3                                  3,444    19.75%        237        341
+  … and 9 more (see missing_before.csv)
+
+[5] IMPUTATION SUMMARY
+--------------------------------------------------------------------
+  Method           : KNNImputer (sklearn)
+  n_neighbors      : 5
+  Fit partition    : Training only (no leakage from future data)
+  Applied to       : Train, Validation, Test
+  Artifact saved   : artifacts\imputer.joblib
+
+  Residual NaN after imputation:
+    ✓  All imputed numeric columns fully resolved — 0 NaN remaining.
+
+[6] SCALING SUMMARY
+--------------------------------------------------------------------
+  Method           : StandardScaler (zero mean, unit variance)
+  Fit partition    : Training only (prevents distribution leakage)
+  Columns scaled   : 36
+  Artifact saved   : artifacts\scaler.joblib
+
+  Scaler statistics (first 10 columns):
+  Column                                 Mean          Std
+--------------------------------------------------------------------
+  PM2.5                               78.0273      67.7955
+  PM10                               115.5443      78.5039
+  NO                                  17.6841      22.2500
+  NO2                                 29.6653      23.0886
+  NOx                                 33.6157      34.6852
+  NH3                                 21.7984      25.3792
+  CO                                   2.4009       7.3777
+  SO2                                 14.9512      18.6461
+  O3                                  33.8159      21.5964
+  Benzene                              2.1728       8.1085
+  … and 26 more columns scaled.
+
+[7] OUTPUT FILES
+--------------------------------------------------------------------
+  Unscaled  train      : datasets\prepared\train.csv
+  Unscaled  validation : datasets\prepared\validation.csv
+  Unscaled  test       : datasets\prepared\test.csv
+  Scaled    train      : datasets\prepared\train_scaled.csv
+  Scaled    validation : datasets\prepared\validation_scaled.csv
+  Scaled    test       : datasets\prepared\test_scaled.csv
+  Imputer artifact     : artifacts\imputer.joblib
+  Scaler artifact      : artifacts\scaler.joblib
+  Missing before       : datasets\reports\missing_before.csv
+  Missing after        : datasets\reports\missing_after.csv
+
+[8] DESIGN DECISIONS
+--------------------------------------------------------------------
+  • Chronological split prevents future-leakage into training.
+  • KNNImputer fit on train-only preserves temporal integrity.
+  • Weather placeholders excluded from imputer AND scaler.
+  • Unscaled datasets provided for tree-based models (XGBoost, RF).
+  • Scaled datasets provided for distance/gradient models (SVM, NN).
+  • Binary cols (IsWeekend, is_lockdown) excluded from scaling.
+  • Categorical cols (City, Season, AQI_Bucket) excluded from both.
+  • Column-count validation fires after every impute/scale step.
+
+[9] PROCESSING TIME
+--------------------------------------------------------------------
+  Elapsed time  : 56.5941 seconds
+
+====================================================================
+  Data preparation complete.
+  Next stage: utils/04_model_training.py
+====================================================================
