@@ -407,8 +407,12 @@ def get_numeric_imputation_cols(df: pd.DataFrame) -> list[str]:
     list[str]
     """
     # Build the full exclusion set
-    exclude = set(NON_NUMERIC_COLS) | set(WEATHER_PLACEHOLDER_COLS)
-
+    exclude = (
+    set(NON_NUMERIC_COLS)
+    | set(WEATHER_PLACEHOLDER_COLS)
+    | {"AQI"}   # Target column must never be used for preprocessing
+)
+    
     # Keep only genuine numeric columns
     numeric = df.select_dtypes(include=[np.number]).columns.tolist()
     eligible = [c for c in numeric if c not in exclude]
@@ -514,7 +518,10 @@ def apply_imputer(
     logger.info("Applying KNNImputer to %s split …", split_label)
 
     # ── Group 1: passthrough (non-numeric / categorical) ──────────────────────
-    passthrough_present = [c for c in NON_NUMERIC_COLS if c in df.columns]
+    passthrough_present = [
+    c for c in (NON_NUMERIC_COLS + ["AQI"])
+    if c in df.columns
+    ]
     passthrough_df = df[passthrough_present].reset_index(drop=True)
 
     # ── Group 2: weather placeholders (100% NaN — bypass imputer entirely) ────
@@ -914,8 +921,19 @@ def run_pipeline() -> None:
     df = load_dataset(INPUT_PATH)
     initial_shape = df.shape
 
-    # ── Step 2: Validate ─────────────────────────────────────
+    # ── Step 2: Validate ─────────────────────────────────
     validate_input(df)
+
+    # Remove rows that have no target AQI.
+    # These rows cannot be used for supervised model training.
+    rows_before = len(df)
+    df = df.dropna(subset=["AQI"]).reset_index(drop=True)
+
+    logger.info(
+    "Removed %d rows with missing AQI target. Remaining rows: %d",
+    rows_before - len(df),
+    len(df),
+    )
 
     # ── Step 3: Chronological split ──────────────────────────
     train_raw, valid_raw, test_raw = chronological_split(

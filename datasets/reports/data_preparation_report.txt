@@ -1,19 +1,19 @@
 ====================================================================
   AIRSENSE AI – DATA PREPARATION REPORT
-  Generated     : 2026-06-25 22:25:38
+  Generated     : 2026-06-28 22:10:34
   Script        : utils/03_data_preparation.py
 ====================================================================
 
 [1] DATASET SIZES
 --------------------------------------------------------------------
   Input shape (feature-engineered) :   29,531 rows × 47 columns
-  Total rows after split           :   29,531
+  Total rows after split           :   24,850
 
   Split              Rows   Date Range
 --------------------------------------------------------------------
-  Train            17,439   2015-01-01  →  2018-12-31
-  Validation        7,446   2019-01-01  →  2019-12-31
-  Test              4,646   2020-01-01  →  2020-07-01
+  Train            13,358   2015-01-01  →  2018-12-31
+  Validation        7,071   2019-01-01  →  2019-12-31
+  Test              4,421   2020-01-01  →  2020-07-01
 
 [2] SPLIT CONFIGURATION
 --------------------------------------------------------------------
@@ -35,31 +35,31 @@
 
 [4] MISSING VALUE SUMMARY — BEFORE IMPUTATION
 --------------------------------------------------------------------
-  Numeric columns assessed (excl. placeholders) : 39
+  Numeric columns assessed (excl. placeholders) : 38
 
   Feature                         Train NaN   Train %  Valid NaN   Test NaN
 --------------------------------------------------------------------
-  pollution_index                    10,173    58.34%      1,663        643
-  PM10_change                         9,662    55.41%      1,363        402
-  PM10_lag_1                          9,492    54.43%      1,307        363
-  PM10                                9,478    54.35%      1,299        363
-  NH3                                 8,298    47.58%      1,503        527
-  AQI_change                          4,415    25.32%        483        290
-  Toluene                             4,336    24.86%      2,383      1,322
-  PM25_change                         4,315    24.74%        365        207
-  AQI_lag_7                           4,203    24.10%        405        247
-  PM25_lag_3                          4,171    23.92%        328        170
-  PM25_lag_1                          4,137    23.72%        316        168
-  AQI_lag_3                           4,134    23.70%        387        234
-  PM2.5                               4,120    23.62%        310        168
-  AQI_lag_2                           4,116    23.60%        383        231
-  AQI_lag_1                           4,098    23.50%        380        227
-  AQI                                 4,081    23.40%        375        225
-  Benzene                             3,820    21.91%      1,007        796
-  AQI_roll_mean_3                     3,616    20.73%        232        136
-  AQI_roll_std_7                      3,483    19.97%        183        104
-  O3                                  3,444    19.75%        237        341
-  … and 9 more (see missing_before.csv)
+  pollution_index                     6,294    47.12%      1,419        511
+  PM10_change                         5,799    43.41%      1,113        260
+  PM10                                5,746    43.02%      1,091        249
+  PM10_lag_1                          5,736    42.94%      1,084        241
+  NH3                                 4,815    36.05%      1,320        401
+  Toluene                             2,537    18.99%      2,106      1,183
+  Benzene                             2,016    15.09%        818        701
+  NOx                                 1,350    10.11%        324        183
+  AQI_lag_7                             776     5.81%        237        154
+  PM25_lag_3                            677     5.07%        164         88
+  AQI_lag_3                             590     4.42%        182        112
+  PM25_change                           549     4.11%        124         70
+  PM2.5                                 508     3.80%        111         59
+  O3                                    498     3.73%         70        239
+  AQI_lag_2                             491     3.68%        149         93
+  PM25_lag_1                            484     3.62%        107         55
+  SO2                                   352     2.63%        161         92
+  AQI_lag_1                             334     2.50%        108         65
+  AQI_change                            334     2.50%        108         65
+  NO                                    219     1.64%         50        118
+  … and 8 more (see missing_before.csv)
 
 [5] IMPUTATION SUMMARY
 --------------------------------------------------------------------
@@ -76,23 +76,23 @@
 --------------------------------------------------------------------
   Method           : StandardScaler (zero mean, unit variance)
   Fit partition    : Training only (prevents distribution leakage)
-  Columns scaled   : 36
+  Columns scaled   : 35
   Artifact saved   : artifacts\scaler.joblib
 
   Scaler statistics (first 10 columns):
   Column                                 Mean          Std
 --------------------------------------------------------------------
-  PM2.5                               78.0273      67.7955
-  PM10                               115.5443      78.5039
-  NO                                  17.6841      22.2500
-  NO2                                 29.6653      23.0886
-  NOx                                 33.6157      34.6852
-  NH3                                 21.7984      25.3792
-  CO                                   2.4009       7.3777
-  SO2                                 14.9512      18.6461
-  O3                                  33.8159      21.5964
-  Benzene                              2.1728       8.1085
-  … and 26 more columns scaled.
+  PM2.5                               79.9501      71.4352
+  PM10                               126.6631      83.5458
+  NO                                  18.4537      23.7247
+  NO2                                 31.6337      24.8881
+  NOx                                 32.5934      31.0700
+  NH3                                 26.1270      27.5813
+  CO                                   2.7619       8.0004
+  SO2                                 14.1550      17.7740
+  O3                                  35.5434      22.8774
+  Benzene                              2.6512       6.8470
+  … and 25 more columns scaled.
 
 [7] OUTPUT FILES
 --------------------------------------------------------------------
@@ -120,7 +120,7 @@
 
 [9] PROCESSING TIME
 --------------------------------------------------------------------
-  Elapsed time  : 56.5941 seconds
+  Elapsed time  : 23.6479 seconds
 
 ====================================================================
   Data preparation complete.

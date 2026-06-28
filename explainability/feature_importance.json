@@ -2,350 +2,350 @@
   "model_name": "LinearRegression",
   "family": "linear",
   "method": "Linear Coefficient Importance (|coef_|)",
-  "timestamp": "2026-06-28T06:36:15.915229",
+  "timestamp": "2026-06-28T22:16:32.528246",
   "n_features": 38,
   "importances": [
     {
       "rank": 1,
       "feature": "AQI_lag_1",
-      "coefficient": 0.7223213709968195,
-      "absolute_coefficient": 0.7223213709968195,
-      "importance": 0.7223213709968195,
-      "importance_pct": 28.6213,
-      "cumulative_pct": 28.6213
+      "coefficient": 146.2225927075447,
+      "absolute_coefficient": 146.2225927075447,
+      "importance": 146.2225927075447,
+      "importance_pct": 41.3457,
+      "cumulative_pct": 41.3457
     },
     {
       "rank": 2,
       "feature": "AQI_change",
-      "coefficient": 0.4100329318796547,
-      "absolute_coefficient": 0.4100329318796547,
-      "importance": 0.4100329318796547,
-      "importance_pct": 16.2472,
-      "cumulative_pct": 44.8685
+      "coefficient": 67.80408474693584,
+      "absolute_coefficient": 67.80408474693584,
+      "importance": 67.80408474693584,
+      "importance_pct": 19.1722,
+      "cumulative_pct": 60.5179
     },
     {
       "rank": 3,
-      "feature": "PM2.5",
-      "coefficient": 0.17932278914852212,
-      "absolute_coefficient": 0.17932278914852212,
-      "importance": 0.17932278914852212,
-      "importance_pct": 7.1055,
-      "cumulative_pct": 51.974
+      "feature": "AQI_roll_mean_3",
+      "coefficient": -30.44204026651401,
+      "absolute_coefficient": 30.44204026651401,
+      "importance": 30.44204026651401,
+      "importance_pct": 8.6077,
+      "cumulative_pct": 69.1256
     },
     {
       "rank": 4,
-      "feature": "AQI_roll_max_7",
-      "coefficient": 0.15546592414715057,
-      "absolute_coefficient": 0.15546592414715057,
-      "importance": 0.15546592414715057,
-      "importance_pct": 6.1602,
-      "cumulative_pct": 58.1342
+      "feature": "PM2.5",
+      "coefficient": 21.337577418347795,
+      "absolute_coefficient": 21.337577418347795,
+      "importance": 21.337577418347795,
+      "importance_pct": 6.0334,
+      "cumulative_pct": 75.159
     },
     {
       "rank": 5,
-      "feature": "AQI_roll_std_7",
-      "coefficient": -0.13014119425213477,
-      "absolute_coefficient": 0.13014119425213477,
-      "importance": 0.13014119425213477,
-      "importance_pct": 5.1567,
-      "cumulative_pct": 63.2909
+      "feature": "PM25_lag_1",
+      "coefficient": -12.754352700112584,
+      "absolute_coefficient": 12.754352700112584,
+      "importance": 12.754352700112584,
+      "importance_pct": 3.6064,
+      "cumulative_pct": 78.7654
     },
     {
       "rank": 6,
       "feature": "PM25_change",
-      "coefficient": -0.11079739913899245,
-      "absolute_coefficient": 0.11079739913899245,
-      "importance": 0.11079739913899245,
-      "importance_pct": 4.3902,
-      "cumulative_pct": 67.6811
+      "coefficient": -11.599829665341364,
+      "absolute_coefficient": 11.599829665341364,
+      "importance": 11.599829665341364,
+      "importance_pct": 3.2799,
+      "cumulative_pct": 82.0453
     },
     {
       "rank": 7,
-      "feature": "PM25_lag_1",
-      "coefficient": -0.10917364770733036,
-      "absolute_coefficient": 0.10917364770733036,
-      "importance": 0.10917364770733036,
-      "importance_pct": 4.3259,
-      "cumulative_pct": 72.007
+      "feature": "AQI_lag_3",
+      "coefficient": 11.040728503864578,
+      "absolute_coefficient": 11.040728503864578,
+      "importance": 11.040728503864578,
+      "importance_pct": 3.1219,
+      "cumulative_pct": 85.1672
     },
     {
       "rank": 8,
-      "feature": "AQI_roll_min_7",
-      "coefficient": -0.08623726163200215,
-      "absolute_coefficient": 0.08623726163200215,
-      "importance": 0.08623726163200215,
-      "importance_pct": 3.4171,
-      "cumulative_pct": 75.4241
+      "feature": "AQI_lag_2",
+      "coefficient": 9.45856515978611,
+      "absolute_coefficient": 9.45856515978611,
+      "importance": 9.45856515978611,
+      "importance_pct": 2.6745,
+      "cumulative_pct": 87.8417
     },
     {
       "rank": 9,
-      "feature": "pollution_index",
-      "coefficient": 0.07991737590378684,
-      "absolute_coefficient": 0.07991737590378684,
-      "importance": 0.07991737590378684,
-      "importance_pct": 3.1667,
-      "cumulative_pct": 78.5908
+      "feature": "CO",
+      "coefficient": 6.823649228754951,
+      "absolute_coefficient": 6.823649228754951,
+      "importance": 6.823649228754951,
+      "importance_pct": 1.9294,
+      "cumulative_pct": 89.7711
     },
     {
       "rank": 10,
-      "feature": "AQI_roll_mean_3",
-      "coefficient": 0.07966342373643132,
-      "absolute_coefficient": 0.07966342373643132,
-      "importance": 0.07966342373643132,
-      "importance_pct": 3.1566,
-      "cumulative_pct": 81.7474
+      "feature": "pollution_index",
+      "coefficient": 5.30135420338299,
+      "absolute_coefficient": 5.30135420338299,
+      "importance": 5.30135420338299,
+      "importance_pct": 1.499,
+      "cumulative_pct": 91.2701
     },
     {
       "rank": 11,
-      "feature": "CO",
-      "coefficient": 0.07711978892108302,
-      "absolute_coefficient": 0.07711978892108302,
-      "importance": 0.07711978892108302,
-      "importance_pct": 3.0558,
-      "cumulative_pct": 84.8032
+      "feature": "CO_lag_1",
+      "coefficient": 4.978052874526434,
+      "absolute_coefficient": 4.978052874526434,
+      "importance": 4.978052874526434,
+      "importance_pct": 1.4076,
+      "cumulative_pct": 92.6777
     },
     {
       "rank": 12,
-      "feature": "CO_lag_1",
-      "coefficient": 0.07510006455089448,
-      "absolute_coefficient": 0.07510006455089448,
-      "importance": 0.07510006455089448,
-      "importance_pct": 2.9758,
-      "cumulative_pct": 87.779
+      "feature": "AQI_roll_mean_7",
+      "coefficient": 4.8806515908925805,
+      "absolute_coefficient": 4.8806515908925805,
+      "importance": 4.8806515908925805,
+      "importance_pct": 1.38,
+      "cumulative_pct": 94.0577
     },
     {
       "rank": 13,
-      "feature": "AQI_lag_3",
-      "coefficient": -0.04685600597943455,
-      "absolute_coefficient": 0.04685600597943455,
-      "importance": 0.04685600597943455,
-      "importance_pct": 1.8566,
-      "cumulative_pct": 89.6356
+      "feature": "AQI_roll_min_7",
+      "coefficient": -4.266786315796473,
+      "absolute_coefficient": 4.266786315796473,
+      "importance": 4.266786315796473,
+      "importance_pct": 1.2065,
+      "cumulative_pct": 95.2642
     },
     {
       "rank": 14,
       "feature": "PM10_lag_1",
-      "coefficient": 0.03708818141606211,
-      "absolute_coefficient": 0.03708818141606211,
-      "importance": 0.03708818141606211,
-      "importance_pct": 1.4696,
-      "cumulative_pct": 91.1052
+      "coefficient": 3.0580582944703285,
+      "absolute_coefficient": 3.0580582944703285,
+      "importance": 3.0580582944703285,
+      "importance_pct": 0.8647,
+      "cumulative_pct": 96.1289
     },
     {
       "rank": 15,
-      "feature": "SO2",
-      "coefficient": 0.033684246459078214,
-      "absolute_coefficient": 0.033684246459078214,
-      "importance": 0.033684246459078214,
-      "importance_pct": 1.3347,
-      "cumulative_pct": 92.4399
+      "feature": "PM10",
+      "coefficient": -1.8398606460351026,
+      "absolute_coefficient": 1.8398606460351026,
+      "importance": 1.8398606460351026,
+      "importance_pct": 0.5202,
+      "cumulative_pct": 96.6491
     },
     {
       "rank": 16,
-      "feature": "AQI_roll_mean_7",
-      "coefficient": -0.025187902521170556,
-      "absolute_coefficient": 0.025187902521170556,
-      "importance": 0.025187902521170556,
-      "importance_pct": 0.998,
-      "cumulative_pct": 93.4379
+      "feature": "AQI_roll_max_7",
+      "coefficient": -1.389977984428252,
+      "absolute_coefficient": 1.389977984428252,
+      "importance": 1.389977984428252,
+      "importance_pct": 0.393,
+      "cumulative_pct": 97.0421
     },
     {
       "rank": 17,
-      "feature": "Month",
-      "coefficient": 0.023192185156786914,
-      "absolute_coefficient": 0.023192185156786914,
-      "importance": 0.023192185156786914,
-      "importance_pct": 0.919,
-      "cumulative_pct": 94.3569
+      "feature": "AQI_roll_std_7",
+      "coefficient": -1.2226877162694951,
+      "absolute_coefficient": 1.2226877162694951,
+      "importance": 1.2226877162694951,
+      "importance_pct": 0.3457,
+      "cumulative_pct": 97.3878
     },
     {
       "rank": 18,
-      "feature": "AQI_lag_7",
-      "coefficient": 0.01795742453401054,
-      "absolute_coefficient": 0.01795742453401054,
-      "importance": 0.01795742453401054,
-      "importance_pct": 0.7115,
-      "cumulative_pct": 95.0684
+      "feature": "Toluene",
+      "coefficient": -1.1891581786049328,
+      "absolute_coefficient": 1.1891581786049328,
+      "importance": 1.1891581786049328,
+      "importance_pct": 0.3362,
+      "cumulative_pct": 97.724
     },
     {
       "rank": 19,
-      "feature": "Month_cos",
-      "coefficient": -0.014512514897129111,
-      "absolute_coefficient": 0.014512514897129111,
-      "importance": 0.014512514897129111,
-      "importance_pct": 0.575,
-      "cumulative_pct": 95.6434
+      "feature": "IsWeekend",
+      "coefficient": 1.1836342230157124,
+      "absolute_coefficient": 1.1836342230157124,
+      "importance": 1.1836342230157124,
+      "importance_pct": 0.3347,
+      "cumulative_pct": 98.0587
     },
     {
       "rank": 20,
-      "feature": "Year",
-      "coefficient": 0.013894351992920486,
-      "absolute_coefficient": 0.013894351992920486,
-      "importance": 0.013894351992920486,
-      "importance_pct": 0.5506,
-      "cumulative_pct": 96.194
+      "feature": "Month_cos",
+      "coefficient": -0.8077497458260123,
+      "absolute_coefficient": 0.8077497458260123,
+      "importance": 0.8077497458260123,
+      "importance_pct": 0.2284,
+      "cumulative_pct": 98.2871
     },
     {
       "rank": 21,
-      "feature": "O3",
-      "coefficient": 0.011403466977320606,
-      "absolute_coefficient": 0.011403466977320606,
-      "importance": 0.011403466977320606,
-      "importance_pct": 0.4519,
-      "cumulative_pct": 96.6459
+      "feature": "PM10_change",
+      "coefficient": 0.7710231677706779,
+      "absolute_coefficient": 0.7710231677706779,
+      "importance": 0.7710231677706779,
+      "importance_pct": 0.218,
+      "cumulative_pct": 98.5051
     },
     {
       "rank": 22,
-      "feature": "PM10",
-      "coefficient": -0.010019107286013101,
-      "absolute_coefficient": 0.010019107286013101,
-      "importance": 0.010019107286013101,
-      "importance_pct": 0.397,
-      "cumulative_pct": 97.0429
+      "feature": "SO2",
+      "coefficient": 0.7352662368107905,
+      "absolute_coefficient": 0.7352662368107905,
+      "importance": 0.7352662368107905,
+      "importance_pct": 0.2079,
+      "cumulative_pct": 98.713
     },
     {
       "rank": 23,
-      "feature": "Toluene",
-      "coefficient": -0.00988844367141825,
-      "absolute_coefficient": 0.00988844367141825,
-      "importance": 0.00988844367141825,
-      "importance_pct": 0.3918,
-      "cumulative_pct": 97.4347
+      "feature": "NO",
+      "coefficient": -0.7242909417565412,
+      "absolute_coefficient": 0.7242909417565412,
+      "importance": 0.7242909417565412,
+      "importance_pct": 0.2048,
+      "cumulative_pct": 98.9178
     },
     {
       "rank": 24,
-      "feature": "NO",
-      "coefficient": -0.009869809673254359,
-      "absolute_coefficient": 0.009869809673254359,
-      "importance": 0.009869809673254359,
-      "importance_pct": 0.3911,
-      "cumulative_pct": 97.8258
+      "feature": "DayOfWeek_cos",
+      "coefficient": -0.5930728997471892,
+      "absolute_coefficient": 0.5930728997471892,
+      "importance": 0.5930728997471892,
+      "importance_pct": 0.1677,
+      "cumulative_pct": 99.0855
     },
     {
       "rank": 25,
-      "feature": "NO2",
-      "coefficient": 0.00930794805622694,
-      "absolute_coefficient": 0.00930794805622694,
-      "importance": 0.00930794805622694,
-      "importance_pct": 0.3688,
-      "cumulative_pct": 98.1946
+      "feature": "NH3",
+      "coefficient": -0.5381555212854281,
+      "absolute_coefficient": 0.5381555212854281,
+      "importance": 0.5381555212854281,
+      "importance_pct": 0.1522,
+      "cumulative_pct": 99.2377
     },
     {
       "rank": 26,
-      "feature": "NOx",
-      "coefficient": 0.008251594492593318,
-      "absolute_coefficient": 0.008251594492593318,
-      "importance": 0.008251594492593318,
-      "importance_pct": 0.327,
-      "cumulative_pct": 98.5216
+      "feature": "O3",
+      "coefficient": 0.49738272656890903,
+      "absolute_coefficient": 0.49738272656890903,
+      "importance": 0.49738272656890903,
+      "importance_pct": 0.1406,
+      "cumulative_pct": 99.3783
     },
     {
       "rank": 27,
-      "feature": "IsWeekend",
-      "coefficient": -0.008069153889952939,
-      "absolute_coefficient": 0.008069153889952939,
-      "importance": 0.008069153889952939,
-      "importance_pct": 0.3197,
-      "cumulative_pct": 98.8413
+      "feature": "DayOfWeek",
+      "coefficient": -0.4497495429058708,
+      "absolute_coefficient": 0.4497495429058708,
+      "importance": 0.4497495429058708,
+      "importance_pct": 0.1272,
+      "cumulative_pct": 99.5055
     },
     {
       "rank": 28,
-      "feature": "DayOfWeek",
-      "coefficient": 0.006640952231964231,
-      "absolute_coefficient": 0.006640952231964231,
-      "importance": 0.006640952231964231,
-      "importance_pct": 0.2631,
-      "cumulative_pct": 99.1044
+      "feature": "PM25_lag_3",
+      "coefficient": -0.4291575296526094,
+      "absolute_coefficient": 0.4291575296526094,
+      "importance": 0.4291575296526094,
+      "importance_pct": 0.1213,
+      "cumulative_pct": 99.6268
     },
     {
       "rank": 29,
-      "feature": "PM25_lag_3",
-      "coefficient": -0.005331790159076495,
-      "absolute_coefficient": 0.005331790159076495,
-      "importance": 0.005331790159076495,
-      "importance_pct": 0.2113,
-      "cumulative_pct": 99.3157
+      "feature": "NO2",
+      "coefficient": -0.2766861110811336,
+      "absolute_coefficient": 0.2766861110811336,
+      "importance": 0.2766861110811336,
+      "importance_pct": 0.0782,
+      "cumulative_pct": 99.705
     },
     {
       "rank": 30,
-      "feature": "AQI_lag_2",
-      "coefficient": 0.004975700191311129,
-      "absolute_coefficient": 0.004975700191311129,
-      "importance": 0.004975700191311129,
-      "importance_pct": 0.1972,
-      "cumulative_pct": 99.5129
+      "feature": "DayOfWeek_sin",
+      "coefficient": 0.2758213447063126,
+      "absolute_coefficient": 0.2758213447063126,
+      "importance": 0.2758213447063126,
+      "importance_pct": 0.078,
+      "cumulative_pct": 99.783
     },
     {
       "rank": 31,
-      "feature": "Day",
-      "coefficient": 0.004381627570298747,
-      "absolute_coefficient": 0.004381627570298747,
-      "importance": 0.004381627570298747,
-      "importance_pct": 0.1736,
-      "cumulative_pct": 99.6865
+      "feature": "NOx",
+      "coefficient": 0.26650955349697114,
+      "absolute_coefficient": 0.26650955349697114,
+      "importance": 0.26650955349697114,
+      "importance_pct": 0.0754,
+      "cumulative_pct": 99.8584
     },
     {
       "rank": 32,
-      "feature": "DayOfWeek_cos",
-      "coefficient": 0.002287442556653256,
-      "absolute_coefficient": 0.002287442556653256,
-      "importance": 0.002287442556653256,
-      "importance_pct": 0.0906,
-      "cumulative_pct": 99.7771
+      "feature": "Day",
+      "coefficient": 0.13234024465326158,
+      "absolute_coefficient": 0.13234024465326158,
+      "importance": 0.13234024465326158,
+      "importance_pct": 0.0374,
+      "cumulative_pct": 99.8958
     },
     {
       "rank": 33,
-      "feature": "DayOfWeek_sin",
-      "coefficient": 0.0019482675440263253,
-      "absolute_coefficient": 0.0019482675440263253,
-      "importance": 0.0019482675440263253,
-      "importance_pct": 0.0772,
-      "cumulative_pct": 99.8543
+      "feature": "Benzene",
+      "coefficient": 0.11772085843636544,
+      "absolute_coefficient": 0.11772085843636544,
+      "importance": 0.11772085843636544,
+      "importance_pct": 0.0333,
+      "cumulative_pct": 99.9291
     },
     {
       "rank": 34,
-      "feature": "PM10_change",
-      "coefficient": -0.0017599364365494937,
-      "absolute_coefficient": 0.0017599364365494937,
-      "importance": 0.0017599364365494937,
-      "importance_pct": 0.0697,
-      "cumulative_pct": 99.924
+      "feature": "AQI_lag_7",
+      "coefficient": 0.09643190286704778,
+      "absolute_coefficient": 0.09643190286704778,
+      "importance": 0.09643190286704778,
+      "importance_pct": 0.0273,
+      "cumulative_pct": 99.9564
     },
     {
       "rank": 35,
-      "feature": "Month_sin",
-      "coefficient": -0.0009345858027752021,
-      "absolute_coefficient": 0.0009345858027752021,
-      "importance": 0.0009345858027752021,
-      "importance_pct": 0.037,
-      "cumulative_pct": 99.961
+      "feature": "Month",
+      "coefficient": 0.0844318314000571,
+      "absolute_coefficient": 0.0844318314000571,
+      "importance": 0.0844318314000571,
+      "importance_pct": 0.0239,
+      "cumulative_pct": 99.9803
     },
     {
       "rank": 36,
-      "feature": "NH3",
-      "coefficient": 0.0007704960470434799,
-      "absolute_coefficient": 0.0007704960470434799,
-      "importance": 0.0007704960470434799,
-      "importance_pct": 0.0305,
-      "cumulative_pct": 99.9915
+      "feature": "Month_sin",
+      "coefficient": -0.0614450621974616,
+      "absolute_coefficient": 0.0614450621974616,
+      "importance": 0.0614450621974616,
+      "importance_pct": 0.0174,
+      "cumulative_pct": 99.9977
     },
     {
       "rank": 37,
-      "feature": "Benzene",
-      "coefficient": -0.00021295713934533437,
-      "absolute_coefficient": 0.00021295713934533437,
-      "importance": 0.00021295713934533437,
-      "importance_pct": 0.0084,
-      "cumulative_pct": 99.9999
+      "feature": "Year",
+      "coefficient": -0.00795789782816455,
+      "absolute_coefficient": 0.00795789782816455,
+      "importance": 0.00795789782816455,
+      "importance_pct": 0.0023,
+      "cumulative_pct": 100.0
     },
     {
       "rank": 38,
       "feature": "is_lockdown",
-      "coefficient": -1.734723475976807e-16,
-      "absolute_coefficient": 1.734723475976807e-16,
-      "importance": 1.734723475976807e-16,
+      "coefficient": 1.0658141036401503e-14,
+      "absolute_coefficient": 1.0658141036401503e-14,
+      "importance": 1.0658141036401503e-14,
       "importance_pct": 0.0,
-      "cumulative_pct": 99.9999
+      "cumulative_pct": 100.0
     }
   ]
 }
