@@ -1,0 +1,29 @@
+{
+  "model": "LinearRegression",
+  "family": "linear",
+  "validation_r2": 0.972126,
+  "engineering_score": 0.999376,
+  "deployment_status": "Production Ready",
+  "top_feature": "AQI_lag_1",
+  "importance": 0.722321,
+  "importance_pct": 28.6213,
+  "top10_features": [
+    "AQI_lag_1",
+    "AQI_change",
+    "PM2.5",
+    "AQI_roll_max_7",
+    "AQI_roll_std_7",
+    "PM25_change",
+    "PM25_lag_1",
+    "AQI_roll_min_7",
+    "pollution_index",
+    "AQI_roll_mean_3"
+  ],
+  "summary": "AQI_lag_1 is the strongest AQI driver in LinearRegression, accounting for 28.6% of total feature importance.",
+  "timestamp": "2026-06-28T06:36:15.918229",
+  "charts": {
+    "all_features": "charts\\feature_importance.png",
+    "top10": "charts\\top10_features.png",
+    "pollutants": "charts\\pollutant_importance.png"
+  }
+}
