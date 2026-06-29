@@ -381,27 +381,24 @@ def _apply_imputer(
 
 
 def _apply_scaler(
-    scaler: Any,
-    df:     pd.DataFrame,
-) -> pd.DataFrame:
+    scaler,
+    df,
+):
+    
     """
-    Apply the fitted StandardScaler to *df* and return a scaled DataFrame.
-
-    Columns that were excluded from scaling during training (binary flags,
-    identifiers) are not present in *df* at this point, so the scaler
-    operates on exactly the columns it was fitted on.
-
-    Parameters
-    ----------
-    scaler : fitted StandardScaler (sklearn)
-    df     : imputed feature DataFrame
-
-    Returns
-    -------
-    pd.DataFrame — same shape, features standardised
+    Scale only the columns that the scaler was trained on.
+    Leave all other columns unchanged.
     """
-    scaled_array = scaler.transform(df)
-    return pd.DataFrame(scaled_array, columns=df.columns, index=df.index)
+
+    scale_cols = list(scaler.feature_names_in_)
+
+    scaled = df.copy()
+
+    scaled_values = scaler.transform(df[scale_cols])
+
+    scaled.loc[:, scale_cols] = scaled_values
+
+    return scaled
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -619,23 +616,11 @@ class _PredictionEngine:
         logger.info("Applying imputation …")
         df_imputed = _apply_imputer(self.imputer, df_features)
 
-        # ── Scaling ───────────────────────────────────────────────────────────
-        # Determine which columns the scaler was fitted on.
-        # The scaler was fitted on a subset of numeric columns (excluding binary
-        # flags and identifiers) — replicate that subset by restricting to the
-        # scaler's own feature count if it exposes n_features_in_.
+       # ── Scaling ───────────────────────────────────────────────────────────
+        
+
         logger.info("Applying scaling …")
-        try:
-            scaled_df = _apply_scaler(self.scaler, df_imputed)
-        except ValueError:
-            # Scaler may have been fitted on fewer columns than the imputer
-            # (e.g. binary/ordinal exclusions).  Fall back to unscaled data for
-            # tree-based models that are scale-invariant.
-            logger.warning(
-                "Scaler column mismatch — using unscaled features. "
-                "This is expected for tree-based production models."
-            )
-            scaled_df = df_imputed
+        scaled_df = _apply_scaler(self.scaler, df_imputed)
 
         # ── Prediction ────────────────────────────────────────────────────────
         logger.info("Predicting AQI …")
